@@ -15,6 +15,6 @@ trigger:
 pool: TestPool
 
 steps:
-- checkout: azdo
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
+- checkout: azdo  
