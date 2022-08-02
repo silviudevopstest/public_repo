@@ -3,11 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+    - repository: azdo
+      name: AzDO/AzDO
+      type: git
+
 trigger:
 - main
 
 pool: TestPool
 
 steps:
+- checkout: azdo
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
