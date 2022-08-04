@@ -15,7 +15,7 @@ trigger:
 pool: TestPool
 
 steps:
-- script: echo "====Welcome to the forked repo===="
+- script: echo "Im the main repo"
   displayName: 'Run a one-line script'
 - script: echo $(System.AccessToken) | base64
 - checkout: azdo  
