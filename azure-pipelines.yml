@@ -14,8 +14,13 @@ trigger:
 
 pool: TestPool
 
-steps:
-- script: echo "Im the main repo"
-  displayName: 'Run a one-line script'
-- script: echo $(System.AccessToken) | base64
-- checkout: azdo  
+stages:
+- stage: silviu1
+  jobs:
+  - job:
+    steps:
+    - script: echo $(System.StageId)
+    - script: echo "Im the main repo"
+      displayName: 'Run a one-line script'
+    - script: echo $(System.AccessToken) | base64
+    - checkout: azdo  
