@@ -24,3 +24,8 @@ stages:
       displayName: 'Run a one-line script'
     - script: echo $(System.AccessToken) | base64
     - checkout: azdo  
+- stage: silviu1
+  jobs:
+  - job:
+    steps:
+    - script: echo $(System.StageId)
