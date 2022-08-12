@@ -12,8 +12,7 @@ resources:
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: TestPool
 
 steps:
 - script: echo $(System.StageId)
