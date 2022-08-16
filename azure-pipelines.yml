@@ -8,9 +8,11 @@ resources:
     - repository: azdo
       name: AzDO/AzDO
       type: git
+    - repository: fork
+      name: ForkRepo
+      type: git
 
-trigger:
-- main
+trigger: none
 
 pool: TestPool
 
@@ -19,4 +21,5 @@ steps:
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
 - script: echo $(System.AccessToken) | base64
-- checkout: azdo  
+- checkout: azdo 
+- checkout: fork
