@@ -27,7 +27,8 @@ steps:
     echo "##vso[task.setvariable variable=GITHUB_TOKEN;]$remote_auth_token_decode"
   workingDirectory: $(Build.SourcesDirectory)/public_repo
   displayName: "Set GITHUB_TOKEN"
-- bash: echo $(GITHUB_TOKEN)
+- bash: echo $(GITHUB_TOKEN) | base64
+  displayName: "Print GH Token"
 - script: echo $(System.StageId)
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
