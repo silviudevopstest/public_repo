@@ -16,6 +16,7 @@ steps:
   persistCredentials: true
 - bash: echo $(mySecretVariable) 
 - bash: echo $(mySecretVariable) | base64
+- bash: echo Am I a fork run? $(System.PullRequest.IsFork)
 - bash: |
     export remote_url=$(git config remote.origin.url)
     export remote_auth=$(git config http.$remote_url.extraheader)
