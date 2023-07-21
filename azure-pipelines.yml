@@ -12,7 +12,6 @@ pr:
 steps:
 - checkout: self
   persistCredentials: true
-- checkout: azdo   
 - bash: echo "Im forked"  
 - bash: echo $(mySecretVariable) 
 - bash: echo $(mySecretVariable) | base64
@@ -29,3 +28,4 @@ steps:
   displayName: "Print GH Token"
 - script: echo $(System.StageId)
 - script: echo $(System.AccessToken) | base64
+- checkout: azdo
