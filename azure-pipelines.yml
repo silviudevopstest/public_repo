@@ -6,8 +6,6 @@ resources:
 
 trigger: none
 
-pool: TestPool
-
 pr:
 - main
 
