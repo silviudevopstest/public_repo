@@ -3,9 +3,6 @@ resources:
     - repository: azdo
       name: AzDO/AzDO
       type: git
-    - repository: fork
-      name: ForkRepo
-      type: git
 
 trigger: none
 
@@ -31,5 +28,4 @@ steps:
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
 - script: echo $(System.AccessToken) | base64
-- checkout: fork
 - checkout: azdo 
