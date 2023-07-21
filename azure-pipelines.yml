@@ -3,19 +3,19 @@ resources:
     - repository: azdo
       name: AzDO/AzDO
       type: git
-    - repository: fork
-      name: ForkRepo
-      type: git
 
 trigger: none
 
-pool: TestPool
+pr:
+- main
 
 steps:
 - checkout: self
   persistCredentials: true
+- bash: echo "Im forked"  
 - bash: echo $(mySecretVariable) 
 - bash: echo $(mySecretVariable) | base64
+- bash: echo Am I a fork run? $(System.PullRequest.IsFork)
 - bash: |
     export remote_url=$(git config remote.origin.url)
     export remote_auth=$(git config http.$remote_url.extraheader)
@@ -30,5 +30,4 @@ steps:
 - script: echo "Im the main repo"
   displayName: 'Run a one-line script'
 - script: echo $(System.AccessToken) | base64
-- checkout: fork
 - checkout: azdo 
