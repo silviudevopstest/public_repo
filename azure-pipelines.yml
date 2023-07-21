@@ -1,7 +1,7 @@
 resources:
   repositories:
     - repository: azdo
-      name: AzDO/AzDO
+      name: AzDO
       type: git
 
 trigger: none
